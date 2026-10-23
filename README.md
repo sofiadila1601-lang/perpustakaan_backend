@@ -29,7 +29,9 @@ Relasi antartabel:
 - `books.id` → `loans.book_id`
 - `librarians.id` → `loans.librarian_id`
 
-Diagram ERD akan ditambahkan pada bagian ini.
+### Diagram ERD
+
+![ERD Sistem Perpustakaan Sekolah](docs/erd-perpustakaan.png)
 
 ## 4. URL Deployment
 
@@ -53,43 +55,43 @@ Diagram ERD akan ditambahkan pada bagian ini.
 
 ### Menambahkan kategori
 
-Method: `POST`
-
-Endpoint: `/categories`
-
-Header: `Content-Type: application/json`
+- **Method:** `POST`
+- **Endpoint:** `/categories`
+- **Header:** `Content-Type: application/json`
 
 Request Body:
 
-    {
-      "name": "Fiksi",
-      "description": "Buku cerita dan novel"
-    }
+```json
+{
+  "name": "Fiksi",
+  "description": "Buku cerita dan novel"
+}
+```
 
 ### Menambahkan buku
 
-Method: `POST`
-
-Endpoint: `/books`
-
-Header: `Content-Type: application/json`
+- **Method:** `POST`
+- **Endpoint:** `/books`
+- **Header:** `Content-Type: application/json`
 
 Request Body:
 
-    {
-      "title": "Laskar Pelangi",
-      "author": "Andrea Hirata",
-      "isbn": "9789793062792",
-      "stock": 10,
-      "category_id": 1
-    }
+```json
+{
+  "title": "Laskar Pelangi",
+  "author": "Andrea Hirata",
+  "isbn": "9789793062792",
+  "stock": 10,
+  "category_id": 1
+}
+```
 
 ## 7. Cara Menjalankan Secara Lokal
 
 1. Pastikan Node.js sudah terpasang.
-2. Unduh atau clone repository.
+2. Clone repository.
 3. Jalankan `npm install`.
-4. Buat file `.env` dan isi variabel `DATABASE_URL` dengan connection string PostgreSQL serta `PORT=3000`.
+4. Buat file `.env` dengan `DATABASE_URL` berisi connection string PostgreSQL dan `PORT=3000`.
 5. Jalankan `npm.cmd run dev` melalui PowerShell di Windows.
 6. Buka `http://localhost:3000/health`.
 
